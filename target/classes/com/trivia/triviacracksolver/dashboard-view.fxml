@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="661.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trivia.triviacracksolver.DashboardController">
+  <tabs>
+    <Tab text="Dashboard">
+         <content>
+            <AnchorPane prefHeight="560.0" prefWidth="861.0">
+               <children>
+                  <BorderPane layoutX="-2.0" layoutY="-2.0" prefHeight="427.0" prefWidth="674.0">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <left>
+                        <VBox prefHeight="459.0" prefWidth="531.0" spacing="5.0" BorderPane.alignment="CENTER">
+                           <padding>
+                              <Insets left="20.0" right="25.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Label text="Active Games:" />
+                              <ListView fx:id="allGamesList" prefHeight="171.0" prefWidth="442.0" />
+                              <Label text="Console:" />
+                              <TextArea fx:id="console" editable="false" prefHeight="189.0" prefWidth="452.0">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font></TextArea>
+                              <Label fx:id="errorLabel" textFill="RED" />
+                           </children>
+                        </VBox>
+                     </left>
+                     <top>
+                        <HBox prefHeight="27.0" prefWidth="560.0" spacing="115.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label fx:id="livesText" text="Lives Available: " />
+                              <Label fx:id="nextLifeText" text="Time until next life:" />
+                              <Label fx:id="loginText" text="Logged in as:" />
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </HBox>
+                     </top>
+                     <right>
+                        <VBox prefHeight="463.0" prefWidth="129.0" spacing="20.0" BorderPane.alignment="CENTER">
+                           <padding>
+                              <Insets bottom="40.0" top="250.0" />
+                           </padding>
+                           <children>
+                              <VBox prefHeight="101.0" prefWidth="147.0" spacing="10.0">
+                                 <padding>
+                                    <Insets right="30.0" />
+                                 </padding>
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="107.0" text="Delay (seconds):" />
+                                    <TextField fx:id="delayField" prefHeight="25.0" prefWidth="120.0" />
+                                    <Button mnemonicParsing="false" onAction="#setDelay" text="Set delay" />
+                                 </children>
+                              </VBox>
+                              <Label text="Toggle autoplay:" />
+                              <Button fx:id="autoPlayButton" mnemonicParsing="false" onAction="#toggleAutoPlay" text="Start" />
+                           </children>
+                        </VBox>
+                     </right>
+                  </BorderPane>
+                  <Button layoutX="573.0" layoutY="540.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+               </children>
+            </AnchorPane>
+         </content></Tab>
+  </tabs>
+</TabPane>
